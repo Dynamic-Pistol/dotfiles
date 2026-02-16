@@ -23,3 +23,4 @@ sway-audio-idle-inhibit & >/dev/null 2>&1 &
 
 swayosd-server & >/dev/null 2>&1 &
 
+exec /run/media/kyle/Main_Disk/Projects/Config/dotfiles/config/mango/timeout.sh
