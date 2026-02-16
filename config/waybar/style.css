@@ -78,6 +78,7 @@ button:hover {
 #pulseaudio,
 #wireplumber,
 #custom-media,
+#custom-notification,
 #tray,
 #mode,
 #idle_inhibitor,
@@ -133,6 +134,10 @@ button:hover {
     color: #000000;
 }
 
+#custom-notification.none {
+    opacity: 0.5;
+}
+
 /*
 label:focus {
     background-color: #000000;
@@ -184,17 +189,10 @@ label:focus {
     background-color: #f53c3c;
 }
 
-#temperature {
-    background-color: #f0932b;
-}
 
 #temperature.critical {
     background-color: #eb4d4b;
 }
-
-/* #tray {
-    background-color: #2980b9;
-} */
 
 #tray>.passive {
     -gtk-icon-effect: dim;
@@ -202,7 +200,7 @@ label:focus {
 
 #tray>.needs-attention {
     -gtk-icon-effect: highlight;
-    /* background-color: #eb4d4b; */
+    background-color: rgba(255, 0, 0, 1);
 }
 
 #scratchpad {

@@ -9,11 +9,11 @@
   "modules-left": [
     "ext/workspaces",
     "dwl/window",
-    "privacy",
+    "privacy"
   ],
   "modules-center": [
     "clock",
-    "mpris",
+    "mpris"
   ],
   "modules-right": [
     "pulseaudio",
@@ -21,17 +21,18 @@
     "bluetooth",
     "group/hardware",
     "keyboard-state",
+    "custom/notification",
     "tray",
     "custom/power"
   ],
   "mpris": {
     "format": "{title}",
-    "title-len": 30,
+    "title-len": 30
   },
   "tray": {
     "icon-size": 21,
     "spacing": 10,
-    "show-passive-items": true,
+    "show-passive-items": true
   },
   "bluetooth": {
     "format": " {status}",
@@ -45,7 +46,7 @@
   },
   "clock": {
     "format": "{:%Y/%m/%d - %H:%M %p}",
-    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
   },
   "cpu": {
     "format": "{usage}% ",
@@ -71,8 +72,8 @@
     "drawer": {
       "transition-duration": 500,
       "children-class": "not-power",
-      "transition-left-to-right": true,
-    },
+      "transition-left-to-right": true
+    }
   },
   "temperature": {
     // "thermal-zone": 2,
@@ -86,20 +87,25 @@
       ""
     ]
   },
-  "backlight": {
-    // "device": "acpi_video1",
-    "format": "{percent}% {icon}",
-    "format-icons": [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
-    ]
+  "custom/notification": {
+    "tooltip": false,
+    "format": "{} {icon}",
+    "format-icons": {
+      "notification": "󱅫",
+      "none": "",
+      "dnd-notification": " ",
+      "dnd-none": "󰂛",
+      "inhibited-notification": " ",
+      "inhibited-none": "",
+      "dnd-inhibited-notification": " ",
+      "dnd-inhibited-none": " "
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "sleep 0.1 && swaync-client -t -sw",
+    "on-click-right": "sleep 0.1 && swaync-client -d -sw",
+    "escape": true
   },
   "power-profiles-daemon": {
     "format": "{icon}",
@@ -143,12 +149,12 @@
       ]
     },
     "on-click": "pavucontrol",
-    "on-click-right": "swayosd-client --output-volume mute-toggle",
+    "on-click-right": "swayosd-client --output-volume mute-toggle"
   },
   "custom/power": {
     "format": "⏻",
     "tooltip": false,
-    "on-click": "wlogout",
+    "on-click": "wlogout"
   },
   "ext/workspaces": {
     "format": "{icon}",
@@ -163,5 +169,5 @@
   },
   "dwl/window": {
     "format": "{title}"
-  },
+  }
 }
